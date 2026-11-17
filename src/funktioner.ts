@@ -42,21 +42,46 @@ export function ärÖppet(veckodag: string, klockslag: number): boolean {
 // 5. Summan av alla tal i listan, med en loop. summa([1, 2, 3]) ger 6.
 export function summa(tal: number[]): number {
   // TODO
+  let total: number = 0;
+  for (let index = 0; index < tal.length; index++) {
+    total += tal[index];
+  }
+  return total;
 }
 
 // 6. Medelvärdet. snitt([2, 4, 6]) ger 4. Tom lista ger 0.
 export function snitt(tal: number[]): number {
   // TODO
+  if (tal.length === 0) {
+    return 0;
+  }
+  let summa: number = 0;
+  for (const num of tal) {
+    summa += num;
+  }
+  return summa / tal.length;
 }
 
 // 7. Det största talet, med en loop. största([3, 9, 4]) ger 9. Tom lista ger undefined.
 export function största(tal: number[]): number | undefined {
   // TODO
+  let max: number = tal[0];
+  for (const num of tal) {
+    if (num > max) {
+      max = num;
+    }
+  }
+  return max;
 }
 
 // 8. Upprepa en text. upprepa("ab", 3) ger "ababab". Använd en loop.
 export function upprepa(text: string, antal: number): string {
   // TODO
+  let resultat: string = "";
+  for (let index = 0; index < antal; index++) {
+    resultat += text;
+  }
+  return resultat;
 }
 
 // 9. En kvittorad. kvittorad("Kaffe", 2, 32) ger "2 x Kaffe: 64 kr".
