@@ -94,9 +94,7 @@ export function kvittorad(namn: string, antal: number, pris: number): string {
 
 // 10. Pilfunktioner. Skriv dem själv med const och =>.
 //     dubbla(4) ger 8. ärJämnt(4) ger true.
-export const dubbla = (n: number): number => {
-  // TODO
-};
-export const ärJämnt = (n: number): boolean => {
-  // TODO
-};
+
+// Skillnaden är kortare syntax & hoisting
+export const dubbla = (n: number): number => n * 2;
+export const ärJämnt = (n: number): boolean => n % 2 === 0;
