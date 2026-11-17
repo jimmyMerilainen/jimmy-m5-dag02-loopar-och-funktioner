@@ -7,17 +7,25 @@
 //    Decimaltal med två decimaler och komma: formateraPris(91.8) ger "91,80 kr".
 export function formateraPris(pris: number): string {
   // TODO
+  if (Number.isInteger(pris)) {
+    return `${pris} kr`;
+  }
+
+  const formaterat = pris.toFixed(2).replace(".", ",");
+  return `${formaterat} kr`;
 }
 
 // 2. Momsdelen av ett pris med 12 % moms (fiktiv sats), avrundad till två decimaler.
 //    momsDel(112) ger 12.
 export function momsDel(pris: number): number {
   // TODO
+  return Number(((pris * 12) / 112).toFixed(2));
 }
 
 // 3. Priset efter rabatt i procent. medRabatt(100, 10) ger 90.
 export function medRabatt(pris: number, procent: number): number {
   // TODO
+  return pris * (1 - procent / 100);
 }
 
 // 4. Är kaféet öppet? Vardagar 7–18, helger (lördag, söndag) 9–16.
